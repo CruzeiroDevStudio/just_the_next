@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "just_the_next"
+version = "0.1.0"
+description = ""
+authors = ["Hugo <hugocbp@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+Flask = "^2.0.0"
+SQLAlchemy = "^1.4.15"
+Flask-SQLAlchemy = "^2.5.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
