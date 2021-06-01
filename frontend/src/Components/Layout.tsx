@@ -35,7 +35,12 @@ export default function Layout() {
       <AppBar position='relative' color='transparent'>
         <Toolbar>
           <TrackChanges className={classes.icon} />
-          <Typography variant='h6' color='inherit' noWrap>
+          <Typography
+            variant='h6'
+            color='inherit'
+            noWrap
+            data-testid={'main-logo'}
+          >
             Just The Next
           </Typography>
         </Toolbar>
