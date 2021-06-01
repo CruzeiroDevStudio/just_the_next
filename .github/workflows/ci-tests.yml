@@ -1,0 +1,22 @@
+name: Frontend / TypeScript Tests
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: frontend
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node
+        uses: actions/setup-node@v1
+      - run: yarn install
+      - run: yarn test

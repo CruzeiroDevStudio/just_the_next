@@ -1,24 +1,24 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import Layout from './Components/Layout'
+import SignUp from './Components/Auth/SignUp'
+import LogIn from './Components/Auth/LogIn'
 
 function App() {
-  const [data, setData] = useState<string | null>(null)
-
-  useEffect(() => {
-    async function fetchData() {
-      const res = await axios.get('/api/message')
-
-      setData(res.data)
-    }
-    fetchData()
-  }, [])
-
   return (
-    <>
-      <h1>Just The Next</h1>
-
-      <p>{data ? data : 'Loading'}</p>
-    </>
+    <Router>
+      <Switch>
+        <Route path='/signup'>
+          <SignUp />
+        </Route>
+        <Route path='/login'>
+          <LogIn />
+        </Route>
+        <Route path='/'>
+          <Layout />
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 
